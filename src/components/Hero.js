@@ -1,10 +1,15 @@
 import "./HeroStyles.css"
 
-function Hero(){
+function Hero(props){
     return(
         <>
-        <div classname="hero">
-            <img alt="HeroImg" src="https://images.pexels.com/photos/1483880/pexels-photo-1483880.jpeg"/>
+        <div classname={props.cName}>
+            <img alt="HeroImg" src={props.heroImg}/>
+                <div className="hero-text">
+                <h1>{props.title}</h1>
+                <p>{props.text}</p>
+                <a href={props.url} className={props.btnClass}>{props.buttonText}</a>
+                </div>
         </div>
         </>
     )
