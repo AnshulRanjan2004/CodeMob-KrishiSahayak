@@ -1,31 +1,14 @@
-import React, { Component } from 'react';
-import logo from './logo.jpg';
-import './App.css';
-import Customers from './Customers'
-import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
+import "./styles.css";
+import { Route, Routes } from "react-router-dom";
+import Home from "./routes/Home";
+import About from "./routes/About";
+import Service from "./routes/Service";
+import Contact from "./routes/Contact";
 
-
-class App extends Component {
-  render() {
-    console.log("Host URL"+process.env.PUBLIC_URL);
-    return (
-
-      <Router basename={process.env.PUBLIC_URL}>
-        <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Simple React App</h1>
-        </header>
-          <Switch>
-                <Route exact path= "/" render={() => (
-                  <Redirect to="/customerlist"/>
-                )}/>
-                 <Route exact path='/customerlist' component={Customers} />
-          </Switch>
-      </div>
-    </Router>
-    );
-  }
+export default function App() {
+  return (
+    <div className="App">
+      <h1>Your Code Here</h1>
+    </div>
+  );
 }
-
-export default App;
